@@ -2,7 +2,8 @@ import * as vscode from "vscode";
 
 import { getImportTag, getImportData, getDragFilePath, getFileExt, notify } from './modules';
 import { NotifyType } from "./model";
-import path = require("path");
+import { supportedImages } from "./providers";
+import * as path from "path";
 
 /**
  * Drag and drop handler
@@ -23,7 +24,7 @@ export class  EmbeddingImagesOnDropProvider
             return notify(NotifyType.sameFilePath);
         }
 
-        if (getFileExt(dragFilePath) !== getFileExt(dropFilePath)) {
+        if (!supportedImages.includes(getFileExt(dragFilePath))) {
             return notify(NotifyType.notSupported);
         }
 
@@ -32,7 +33,8 @@ export class  EmbeddingImagesOnDropProvider
 
         const filename = path.basename(dragFilePath);
 
-        const editor = vscode.window.activeTextEditor;
+        // Focus on the editor to be pasted
+        const editor = vscode.window.visibleTextEditors.filter(v => v.document === _document)[0];
 
         // Place data at the end of the file.
         editor?.edit((editBuilder: vscode.TextEditorEdit) => {
@@ -45,7 +47,7 @@ export class  EmbeddingImagesOnDropProvider
             // Insert DataUrl at the end of the file.
             editBuilder.insert(
                 new vscode.Position(editor.document.lineCount, 0),
-                getImportData(dragFilePath, index)
+                getImportData(index, dragFilePath)
             );
         });
 

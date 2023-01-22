@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 
 import { getFileExt } from ".";
 import { supportedImages } from "../providers";
+import * as fs from "fs";
 
 /**
  * Get calculated import style to append in editor.
@@ -26,7 +27,6 @@ export function getImportData(
     index: string,
     dragFilePath: string,
 ): string {
-    const fs = require("fs");
     const ext = getFileExt(dragFilePath).substring(1);
     const base64Data = fs.readFileSync(dragFilePath, { encoding: "base64" });
 

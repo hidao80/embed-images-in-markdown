@@ -8,19 +8,19 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 ## Requirements
 
-- Visual sudio code version 1.74.3 or higher
+- Visual sudio code version 1.74.0 or higher
 
 ## Known Issues
 
-- **The value "markdown.editor.drop.enabled" must be `false` for this to work.**
 - If you drag and drop multiple files at the same time, only one will be pasted.
-- **You can only paste to the active editor pane. Be careful if you have multiple panes open.**
 
 ## Release Notes
 
 ### 0.0.2
 
 - Drag and drop from Explorer view can now also be pasted.
+- When multiple panes are open, you can now paste to the inactive editor pane.
+- Any value of "markdown.editor.drop.enabled" will work.
 
 ### 0.0.1
 
