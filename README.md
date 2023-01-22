@@ -21,7 +21,6 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 - Drag and drop from Explorer view can now also be pasted.
 - When multiple panes are open, you can now paste to the inactive editor pane.
--
 
 ### 0.0.1
 
