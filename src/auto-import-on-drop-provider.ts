@@ -1,12 +1,13 @@
 import * as vscode from "vscode";
 
-import { getImportTag, getImportData, getData, getFileExt, notify } from './modules';
+import { getImportTag, getImportData, getDragFilePath, getFileExt, notify } from './modules';
 import { NotifyType } from "./model";
+import path = require("path");
 
 /**
  * Drag and drop handler
  */
-export class AutoImportOnDropProvider
+export class  EmbeddingImagesOnDropProvider
     implements vscode.DocumentDropEditProvider
 {
     async provideDocumentDropEdits(
@@ -15,30 +16,21 @@ export class AutoImportOnDropProvider
         _dataTransfer: vscode.DataTransfer,
         _token: vscode.CancellationToken
     ): Promise<vscode.DocumentDropEdit> {
-        // Get the active text editor file path and dragged file path from tree view
-        // await vscode.commands.executeCommand('copyFilePath');
-        // const dragFilePath = await vscode.env.clipboard.readText();
-        const dragFilePath = getData(_dataTransfer)?.asFile()?.uri?.fsPath ?? _document.uri.fsPath;
+        const dragFilePath = getDragFilePath(_dataTransfer) ?? "";
         const dropFilePath = _document.uri.fsPath;
 
-        // Prevents same file drag and drop
         if (dragFilePath.toLowerCase() === dropFilePath.toLowerCase()) {
             return notify(NotifyType.sameFilePath);
         }
 
-        // Prevents unsupported drag and drop
-        if (
-            // Checks unsupported drag and drop files
-            (getFileExt(dragFilePath) !== getFileExt(dropFilePath) &&
-                ![".md"].includes(
-                    getFileExt(dropFilePath)
-                ))
-        ) {
+        if (getFileExt(dragFilePath) !== getFileExt(dropFilePath)) {
             return notify(NotifyType.notSupported);
         }
 
-        // Use UUID as the ID of the reference link.
+        // Use Unix time as the ID of the reference link.
         const index: string = new Date().getTime().toString();
+
+        const filename = path.basename(dragFilePath);
 
         const editor = vscode.window.activeTextEditor;
 
@@ -47,7 +39,7 @@ export class AutoImportOnDropProvider
             // Insert a reference link at the dropped position.
             editBuilder.insert(
                 _position,
-                getImportTag(index)
+                getImportTag(index, filename)
             );
 
             // Insert DataUrl at the end of the file.

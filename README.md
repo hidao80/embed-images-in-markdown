@@ -14,11 +14,14 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 - **The value "markdown.editor.drop.enabled" must be `false` for this to work.**
 - If you drag and drop multiple files at the same time, only one will be pasted.
-- Drag and drop from the explorer pane will not paste.
 - **You can only paste to the active editor pane. Be careful if you have multiple panes open.**
 
 ## Release Notes
 
+### 0.0.2
+
+- Drag and drop from Explorer view can now also be pasted.
+
 ### 0.0.1
 
-We confirmed that it works at a minimum.
+- We confirmed that it works at a minimum.

@@ -2,7 +2,7 @@
   "name": "embed-images-in-markdown",
   "displayName": "Embed images in markdown",
   "description": "Drag and drop an image onto the markdown to embed it as a DataUrl.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "hidao80",
   "engines": {
     "vscode": "^1.74.0"
@@ -20,7 +20,7 @@
     "markdown"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:markdown"
   ],
   "main": "./out/extension.js",
   "repository": {
@@ -28,7 +28,9 @@
     "url": "https://github.com/hidao80/embed-images-in-markdown.git"
   },
   "scripts": {
+    "build": "npm run compile && vsce package",
     "compile": "tsc -p ./",
+    "watch": "npm run compile",
     "lint": "eslint src --ext ts"
   },
   "devDependencies": {

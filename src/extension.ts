@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-import { AutoImportOnDropProvider } from './auto-import-on-drop-provider';
+import {  EmbeddingImagesOnDropProvider } from './auto-import-on-drop-provider';
 import { selectors } from './providers';
 
 /**
@@ -11,6 +11,6 @@ import { selectors } from './providers';
  */
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-        vscode.languages.registerDocumentDropEditProvider(selectors, new AutoImportOnDropProvider())
+        vscode.languages.registerDocumentDropEditProvider(selectors, new EmbeddingImagesOnDropProvider())
 	);
 }

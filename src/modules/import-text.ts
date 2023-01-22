@@ -5,25 +5,26 @@ import { supportedImages } from "../providers";
 
 /**
  * Get calculated import style to append in editor.
- * @param {string} dragFilePath Dragged file path.
  * @param {string} index Index of image links.
+ * @param {string} filename Dragged file base name.
  * @returns Import statement string
  */
 export function getImportTag(
     index: string,
+    filename: string | null = null,
 ): string {
-    return `![alt-text][${index}]`;
+    return `![${filename}][${index}]`;
 }
 
 /**
  * Get calculated import style to append in editor.
- * @param {string} dragFilePath Dragged file path.
  * @param {string} index Index of image links.
+ * @param {string} dragFilePath Dragged file path.
  * @returns Import images base64 string
  */
 export function getImportData(
-    dragFilePath: string,
     index: string,
+    dragFilePath: string,
 ): string {
     const fs = require("fs");
     const ext = getFileExt(dragFilePath).substring(1);
@@ -37,15 +38,14 @@ export function getImportData(
  * @param {vscode.DataTransfer} data Dropped files
  * @returns {vscode.DataTransferItem | undefined} Graphics file
  */
-export function getData(data: vscode.DataTransfer): vscode.DataTransferItem | undefined {
-    let file: vscode.DataTransferItem | undefined;
+export function getDragFilePath(data: vscode.DataTransfer): string | undefined {
     for (const ext of supportedImages) {
         const lowerCaseExt = ext.substring(1).toLowerCase();
         const mimeType = `image/${lowerCaseExt}`;
-        file = data.get(mimeType);
+        const file = data.get(mimeType)?.asFile()?.uri?.fsPath;
         if (file) {
-            break;
+            return file;
         }
     }
-    return file;
+    return data.get('text/plain')?.value;
 }
