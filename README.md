@@ -17,6 +17,10 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 ## Release Notes
 
+### 0.0.3
+
+- Support for uppercase extensions.
+
 ### 0.0.2
 
 - Drag and drop from Explorer view can now also be pasted.

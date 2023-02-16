@@ -24,7 +24,7 @@ export class  EmbeddingImagesOnDropProvider
             return notify(NotifyType.sameFilePath);
         }
 
-        if (!supportedImages.includes(getFileExt(dragFilePath))) {
+        if (!supportedImages.includes(getFileExt(dragFilePath.toLowerCase()))) {
             return notify(NotifyType.notSupported);
         }
 
