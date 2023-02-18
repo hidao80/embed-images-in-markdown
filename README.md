@@ -19,6 +19,10 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 ## Release Notes
 
+### 0.0.4
+
+- add extension icon.
+
 ### 0.0.3
 
 - Support for uppercase extensions.
