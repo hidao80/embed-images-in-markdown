@@ -6,6 +6,8 @@ When a markdown file is open, dragging and dropping an image file with a `png`, 
 
 At this time, the image is placed at the drop position in the form of a reference link, and the image file converted to the DataUrl scheme is expanded to the last line of the file.
 
+![preview](https://user-images.githubusercontent.com/8155294/219820928-a38088bd-a8f4-465e-9117-30a17216f3b3.gif)
+
 ## Requirements
 
 - Visual sudio code version 1.74.0 or higher
