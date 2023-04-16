@@ -19,6 +19,10 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 ## Release Notes
 
+### 0.0.5
+
+- Support for macOS, Linux, WSL.
+
 ### 0.0.4
 
 - add extension icon.
