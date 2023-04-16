@@ -27,7 +27,7 @@ export class  EmbeddingImagesOnDropProvider
         if (!dragFile) {
             return { insertText: "" };
         }
-        const dragFilePath = dragFile.filepath;
+        const dragFilePath = dragFile.filePath;
         const dropFilePath = _document.uri.fsPath;
 
         if (dragFilePath.toLowerCase() === dropFilePath.toLowerCase()) {

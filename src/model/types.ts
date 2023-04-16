@@ -4,6 +4,6 @@
 export type FileExtension = ".gif" | ".jpeg" | ".jpg" | ".png" | ".webp";
 
 export interface DragFileInfo {
-    filepath: string;
+    filePath: string;
     base64: string;
 }
