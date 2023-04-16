@@ -38,23 +38,23 @@ export function getImportData(
  * @returns {Promise<DragFileInfo | undefined>} Dragged file info.
  */
 export async function getDragFile(data: vscode.DataTransfer): Promise<DragFileInfo | undefined> {
+    let file: vscode.DataTransferFile | undefined;
     for (const ext of supportedImages) {
         const lowerCaseExt = ext.substring(1).toLowerCase();
         const mimeType = `image/${lowerCaseExt}`;
-        const file = data.get(mimeType)?.asFile();
+        file = data.get(mimeType)?.asFile();
         if (file) {
-            const filePath = file.uri?.fsPath ?? "";
-            const base64 = Buffer.from(await file.data()).toString("base64");
-            return { filePath, base64 };
+            break;
         }
     }
-    const filePath: string = data.get('text/plain')?.value;
-    const base64 = fs.readFileSync(filePath, { encoding: "base64" });
+    let filePath = file?.uri?.fsPath ?? data.get('text/plain')?.value;
+    filePath = filePath.replace("\\\\", "\\");  // for WSL
+    const base64 = fs.readFileSync(filePath,  { encoding: "base64" });
     return { filePath, base64 };
 }
 
 export function basename(filePath: string): string {
-    const sep = (filePath.startsWith("/")) ? "/" : "\\";
-    const index = filePath.lastIndexOf(sep);
+    const separator = (filePath.startsWith("/")) ? "/" : "\\";
+    const index = filePath.lastIndexOf(separator);
     return index === -1 ? filePath : filePath.substring(index+1);
 }
