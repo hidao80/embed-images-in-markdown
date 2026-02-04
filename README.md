@@ -1,5 +1,6 @@
 # Embed images in markdown
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hidao80/embed-images-in-markdown)
 
 ## Features
