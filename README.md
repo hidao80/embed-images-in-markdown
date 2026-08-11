@@ -6,8 +6,7 @@
 
 # Embed images in markdown
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hidao80/embed-images-in-markdown)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hidao80/embed-images-in-markdown)
 
 ## Features
 
@@ -20,6 +19,10 @@ At this time, the image is placed at the drop position in the form of a referenc
 ## Requirements
 
 - Visual sudio code version 1.74.0 or higher
+
+## Contributing
+
+Contributions are welcome!
 
 ## Known Issues
 
