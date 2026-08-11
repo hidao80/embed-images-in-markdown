@@ -1,3 +1,9 @@
+<center>
+
+![Social preview](./docs/social-preview.png)
+
+</center>
+
 # Embed images in markdown
 
 ## Features

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Images in Markdown — VS Code Extension</title>
+  <meta name="description" content="A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.">
+  <link rel="canonical" href="https://hidao80.github.io/embed-images-in-markdown/">
+  <link rel="icon" href="../images/icon256.png">
+
+  <!-- Open Graph / Facebook / X.com -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hidao80.github.io/embed-images-in-markdown/">
+  <meta property="og:title" content="Embed Images in Markdown — VS Code Extension">
+  <meta property="og:description" content="A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/hidao80/embed-images-in-markdown/main/images/icon256.png">
+  <meta property="og:site_name" content="Embed Images in Markdown">
+  <meta property="og:locale" content="en_US">
+
+  <!-- X.com (Twitter) Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Embed Images in Markdown — VS Code Extension">
+  <meta name="twitter:description" content="A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/hidao80/embed-images-in-markdown/main/images/icon256.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Embed Images in Markdown",
+    "description": "A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "softwareVersion": "0.0.5",
+    "url": "https://hidao80.github.io/embed-images-in-markdown/",
+    "downloadUrl": "https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown",
+    "image": "https://raw.githubusercontent.com/hidao80/embed-images-in-markdown/main/images/icon256.png",
+    "license": "https://github.com/hidao80/embed-images-in-markdown/blob/main/LICENSE",
+    "author": {
+      "@type": "Person",
+      "name": "hidao80",
+      "url": "https://github.com/hidao80"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <style>
+:root{ --pico-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;} .hero{ text-align: center; padding: 4rem 1rem 2rem;} .hero img.icon{ width: 96px; height: 96px; border-radius: 20%; margin-bottom: 1rem;} .hero h1{ margin-bottom: 0.5rem;} .section-title{ text-align: center;} .hero .tagline{ font-size: 1.25rem; color: var(--pico-muted-color); max-width: 640px; margin: 0 auto 2rem;} .cta-group{ display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;} .demo-wrap{ text-align: center; margin: 2rem 0;} .demo-wrap img{ max-width: 100%; border-radius: var(--pico-border-radius); box-shadow: 0 8px 30px rgba(0,0,0,0.25);} .feature-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0;} .feature-grid article{ text-align: center;} .feature-grid .emoji{ font-size: 2.5rem; display: block; margin-bottom: 0.5rem;} .steps{ counter-reset: step; list-style: none; padding: 0;} .steps li{ counter-increment: step; position: relative; padding: 0.75rem 0 0.75rem 3rem; border-bottom: 1px solid var(--pico-muted-border-color);} .steps li:last-child{ border-bottom: none;} .steps li::before{ content: counter(step); position: absolute; left: 0; top: 0.6rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--pico-primary); color: var(--pico-primary-inverse); display: flex; align-items: center; justify-content: center; font-weight: bold;} footer.container{ text-align: center; padding: 2rem 1rem; color: var(--pico-muted-color);} mark{ background: var(--pico-primary); color: var(--pico-primary-inverse); padding: 0.1rem 0.4rem; border-radius: 0.3rem;}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <img class="icon" src="../images/icon256.png" alt="Embed Images in Markdown icon">
+      <h1>Embed Images in Markdown</h1>
+      <p class="tagline">
+        Just <mark>drag and drop</mark> an image into your Markdown.<br>
+        No more scattered image files — everything lives in a single <code>.md</code> file.
+      </p>
+      <div class="cta-group">
+        <a href="https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown" role="button">
+          Get it on VS Code Marketplace
+        </a>
+        <a href="https://github.com/hidao80/embed-images-in-markdown" role="button" class="secondary outline">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <section class="demo-wrap">
+      <img src="https://user-images.githubusercontent.com/8155294/219820928-a38088bd-a8f4-465e-9117-30a17216f3b3.gif" alt="Demo of holding Shift and dragging an image into Markdown to embed it">
+    </section>
+
+    <section>
+      <h2 class="section-title">Features</h2>
+      <div class="feature-grid">
+        <article>
+          <span class="emoji">🖱️</span>
+          <h3>Just drag and drop</h3>
+          <p>Hold <kbd>Shift</kbd> and drop an image onto the editor — that's it.</p>
+        </article>
+        <article>
+          <span class="emoji">📦</span>
+          <h3>Single-file, self-contained</h3>
+          <p>Images are converted to DataURLs and appended to the end of the file, preventing image files from scattering around your project.</p>
+        </article>
+        <article>
+          <span class="emoji">🖼️</span>
+          <h3>Common formats supported</h3>
+          <p>Works with <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (uppercase extensions too).</p>
+        </article>
+        <article>
+          <span class="emoji">🗂️</span>
+          <h3>Explorer drag & drop too</h3>
+          <p>Also works when dragging from the VS Code Explorer view, and supports pasting into an inactive editor pane.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">How it works</h2>
+      <ol class="steps">
+        <li>Open a Markdown file.</li>
+        <li>Hold <kbd>Shift</kbd> and drag an image file onto the editor.</li>
+        <li>A reference link is inserted at the drop position, and the image body (DataURL) is appended to the end of the file.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2 class="section-title">Before you start</h2>
+      <article>
+        <header><strong>⚠️ Required setting</strong></header>
+        The setting <code>markdown.editor.drop.enabled</code> must be set to <code>false</code> for this to work.
+      </article>
+      <article>
+        <header><strong>Known limitations</strong></header>
+        <ul>
+          <li>If you drag and drop multiple files at once, only one gets pasted.</li>
+          <li>Requires VS Code 1.74.0 or higher.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>MIT License &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Embed Images in Markdown
+
+> A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.
+
+Embed Images in Markdown is a Visual Studio Code extension. While a Markdown file is open, holding `Shift` and dragging an image file (`png`, `jpeg`, `jpg`, `gif`, or `webp`, extensions case-insensitive) onto the editor converts the image to a DataURL and inserts it into the file. A reference link is placed at the drop position, and the DataURL-encoded image body is appended to the end of the file. This keeps a Markdown document and its images self-contained in a single `.md` file, with no separate image assets to manage.
+
+It also supports dragging image files from the VS Code Explorer view, and pasting into an inactive editor pane when multiple panes are open.
+
+## Requirements
+
+- Visual Studio Code version 1.74.0 or higher.
+- The setting `markdown.editor.drop.enabled` must be set to `false` for the extension to work.
+
+## Known limitations
+
+- If multiple files are dragged and dropped at the same time, only one is pasted.
+
+## Docs
+
+- [Landing page](https://hidao80.github.io/embed-images-in-markdown/): Feature overview, demo, and usage steps.
+- [README](https://github.com/hidao80/embed-images-in-markdown/blob/main/README.md): Full feature description and release notes.
+
+## Links
+
+- [VS Code Marketplace listing](https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown)
+- [GitHub repository](https://github.com/hidao80/embed-images-in-markdown)
+- [License (MIT)](https://github.com/hidao80/embed-images-in-markdown/blob/main/LICENSE)
