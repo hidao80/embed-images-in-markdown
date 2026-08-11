@@ -6,6 +6,9 @@
 
 # Embed images in markdown
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hidao80/embed-images-in-markdown)
+
 ## Features
 
 When a markdown file is open, dragging and dropping an image file with a `png`, `jpeg`, `jpg`, `gif`, or `webp` extension onto the text while holding down the `Shift` key will convert it to the DataUrl scheme and paste it into the markdown file.
