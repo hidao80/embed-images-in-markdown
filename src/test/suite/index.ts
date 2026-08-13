@@ -2,6 +2,10 @@ import * as path from 'path';
 import * as Mocha from 'mocha';
 import { glob } from 'glob';
 
+/**
+ * Discovers and runs all compiled Mocha test files under the test output directory.
+ * @returns {Promise<void>} Resolves when all tests pass, or rejects if any test fails.
+ */
 export async function run(): Promise<void> {
 	// Create the mocha test
 	const mocha = new Mocha({
