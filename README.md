@@ -6,7 +6,7 @@
 
 # Embed images in markdown
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/hidao80/embed-images-in-markdown)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
 
@@ -20,25 +20,27 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 - Visual sudio code version 1.125.0 or higher
 
+Verified working on Windows. macOS and Linux are supported by design (all path-handling code guards on Windows-specific shapes and falls through to the standard cross-platform path otherwise) but have not been independently verified — feedback welcome.
+
 ## Contributing
 
 Contributions are welcome!
 
 ## Known Issues
 
-- **The value "markdown.editor.drop.enabled" must be `false` for this to work.**
+- Since VS Code 1.125.0, `markdown.editor.drop.enabled` is a string setting (`"always"`, `"smart"`, `"never"`) instead of a boolean. This setting only controls VS Code's own built-in Markdown link insertion and should not affect this extension, but if the built-in behavior interferes, set it to `"never"`.
 - If you drag and drop multiple files at the same time, only one will be pasted.
 
 ## Release Notes
 
-### 0.0.6
+### 0.1.0
 
-- Updated icon to icon256.png.
-- Fixed Open Graph and Twitter image URLs for social preview.
-- Bumped minimum VS Code version requirement to 1.125.0.
-- Updated dependencies to resolve security vulnerabilities.
-- Fixed a build failure caused by an incompatible `glob` API usage in the test runner.
-- Removed the unused `uuid` dependency.
+Fixes drag-and-drop compatibility with VS Code 1.125.0 and later.
+
+- Fixed: dropping an image no longer failed to insert on recent versions of VS Code.
+- Fixed: on Windows, dropped images from the file explorer could be pasted with a broken image path.
+- If a drop fails, you'll now see an error message instead of it failing silently.
+- Requires VS Code 1.125.0 or higher.
 
 ### 0.0.5
 

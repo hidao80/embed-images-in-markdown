@@ -33,7 +33,7 @@
     "description": "A VS Code extension that embeds images into Markdown as DataURLs, just by dragging and dropping.",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Windows, macOS, Linux",
-    "softwareVersion": "0.0.5",
+    "softwareVersion": "0.1.0",
     "url": "https://hidao80.github.io/embed-images-in-markdown/",
     "downloadUrl": "https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown",
     "image": "https://hidao80.github.io/embed-images-in-markdown/social-preview.png",
@@ -116,14 +116,11 @@
     <section>
       <h2 class="section-title">Before you start</h2>
       <article>
-        <header><strong>⚠️ Required setting</strong></header>
-        The setting <code>markdown.editor.drop.enabled</code> must be set to <code>false</code> for this to work.
-      </article>
-      <article>
         <header><strong>Known limitations</strong></header>
         <ul>
           <li>If you drag and drop multiple files at once, only one gets pasted.</li>
-          <li>Requires VS Code 1.74.0 or higher.</li>
+          <li>Requires VS Code 1.125.0 or higher.</li>
+          <li>If VS Code's built-in Markdown drop behavior interferes, set <code>markdown.editor.drop.enabled</code> to <code>"never"</code> in your settings.</li>
         </ul>
       </article>
     </section>

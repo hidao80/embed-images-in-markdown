@@ -8,12 +8,12 @@ It also supports dragging image files from the VS Code Explorer view, and pastin
 
 ## Requirements
 
-- Visual Studio Code version 1.74.0 or higher.
-- The setting `markdown.editor.drop.enabled` must be set to `false` for the extension to work.
+- Visual Studio Code version 1.125.0 or higher.
 
 ## Known limitations
 
 - If multiple files are dragged and dropped at the same time, only one is pasted.
+- If VS Code's built-in Markdown drop behavior interferes, set `markdown.editor.drop.enabled` to `"never"` in your settings.
 
 ## Docs
 
