@@ -2,7 +2,7 @@
   "name": "embed-images-in-markdown",
   "displayName": "Embed images in markdown",
   "description": "Drag and drop an image onto the markdown to embed it as a DataUrl.",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "publisher": "hidao80",
   "engines": {
     "vscode": "^1.125.0"
@@ -33,17 +33,16 @@
     "compile": "tsc -p ./",
     "watch": "npm run compile",
     "lint": "biome check src",
-    "install:vscode": "pnpm run package && code --install-extension mago-vsx-$(node -p \"require('./package.json').version\").vsix",
-    "uninstall:vscode": "code --uninstall-extension hidao80.mago-vsx"
+    "package": "vsce package"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.7",
-    "@types/glob": "^8.1.0",
     "@types/lodash": "^4.17.25",
     "@types/mocha": "^10.0.10",
     "@types/node": "~16.18.126",
     "@types/vscode": "^1.125.0",
     "@vscode/test-electron": "^2.5.2",
+    "glob": "^13.0.6",
     "typescript": "^4.9.5"
   },
   "dependencies": {
