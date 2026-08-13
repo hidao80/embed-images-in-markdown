@@ -2,10 +2,10 @@
   "name": "embed-images-in-markdown",
   "displayName": "Embed images in markdown",
   "description": "Drag and drop an image onto the markdown to embed it as a DataUrl.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "hidao80",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.125.0"
   },
   "categories": [
     "Other"
@@ -32,20 +32,23 @@
     "build": "npm run compile && vsce package",
     "compile": "tsc -p ./",
     "watch": "npm run compile",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "install:vscode": "pnpm run package && code --install-extension mago-vsx-$(node -p \"require('./package.json').version\").vsix",
+    "uninstall:vscode": "code --uninstall-extension hidao80.mago-vsx"
   },
   "devDependencies": {
-    "@types/glob": "^8.0.0",
-    "@types/lodash": "^4.14.191",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "16.x",
-    "@types/uuid": "^9.0.0",
-    "@types/vscode": "^1.74.0",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "@vscode/test-electron": "^2.2.0",
-    "eslint": "^8.28.0",
-    "typescript": "^4.9.3",
-    "uuid": "^9.0.0"
+    "@types/glob": "^8.1.0",
+    "@types/lodash": "^4.17.25",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "~16.18.126",
+    "@types/vscode": "^1.125.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^8.57.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.9.2"
   }
 }
