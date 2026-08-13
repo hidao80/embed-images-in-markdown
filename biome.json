@@ -1,0 +1,25 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.7/schema.json",
+  "files": {
+    "includes": ["**", "!out", "!dist", "!**/*.d.ts"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "style": {
+        "useNamingConvention": "warn"
+      },
+      "suspicious": {
+        "noDoubleEquals": "warn",
+        "noCatchAssign": "warn"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "assist": {
+    "enabled": false
+  }
+}
