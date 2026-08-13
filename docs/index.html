@@ -116,11 +116,17 @@
     <section>
       <h2 class="section-title">Before you start</h2>
       <article>
+        <header><strong>Requirements</strong></header>
+        <ul>
+          <li>Requires VS Code 1.125.0 or higher.</li>
+          <li>Verified working on Windows. macOS and Linux are supported by design but have not been independently verified — feedback welcome.</li>
+        </ul>
+      </article>
+      <article>
         <header><strong>Known limitations</strong></header>
         <ul>
-          <li>If you drag and drop multiple files at once, only one gets pasted.</li>
-          <li>Requires VS Code 1.125.0 or higher.</li>
-          <li>If VS Code's built-in Markdown drop behavior interferes, set <code>markdown.editor.drop.enabled</code> to <code>"never"</code> in your settings.</li>
+          <li>Since VS Code 1.125.0, <code>markdown.editor.drop.enabled</code> is a string setting (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) instead of a boolean. This setting only controls VS Code's own built-in Markdown link insertion and should not affect this extension, but if the built-in behavior interferes, set it to <code>"never"</code>.</li>
+          <li>If you drag and drop multiple files at the same time, only one will be pasted.</li>
         </ul>
       </article>
     </section>
