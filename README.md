@@ -18,7 +18,7 @@ At this time, the image is placed at the drop position in the form of a referenc
 
 ## Requirements
 
-- Visual sudio code version 1.74.0 or higher
+- Visual sudio code version 1.125.0 or higher
 
 ## Contributing
 
@@ -30,6 +30,15 @@ Contributions are welcome!
 - If you drag and drop multiple files at the same time, only one will be pasted.
 
 ## Release Notes
+
+### 0.0.6
+
+- Updated icon to icon256.png.
+- Fixed Open Graph and Twitter image URLs for social preview.
+- Bumped minimum VS Code version requirement to 1.125.0.
+- Updated dependencies to resolve security vulnerabilities.
+- Fixed a build failure caused by an incompatible `glob` API usage in the test runner.
+- Removed the unused `uuid` dependency.
 
 ### 0.0.5
 
