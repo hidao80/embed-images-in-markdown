@@ -27,16 +27,16 @@ A VS Code extension ("Embed images in markdown") that lets users drag-and-drop a
 
 - Files are small and organized by responsibility (`modules/`, `model/`, `providers/`), not by type dump. Follow this pattern when adding new logic — prefer a new small module over growing an existing file.
 - `strict` TypeScript is enabled; keep new code strict-clean.
-- Biome config (`biome.json`) enforces `noDoubleEquals` (eqeqeq) and `useNamingConvention` as warnings. Run `npm run lint` before considering work done.
+- Biome config (`biome.json`) enforces `noDoubleEquals` (eqeqeq) and `useNamingConvention` as warnings. Run `bun run lint` before considering work done.
 - Match the existing indentation and brace style in the file you're editing rather than reformatting.
 
 ## Commands
 
 ```bash
-npm run compile   # tsc -p ./
-npm run watch     # same as compile, no watch mode currently configured beyond this
-npm run lint      # eslint src --ext ts
-npm run build     # compile + vsce package
+bun run compile   # tsc -p ./
+bun run watch     # same as compile, no watch mode currently configured beyond this
+bun run lint      # eslint src --ext ts
+bun run build     # compile + vsce package
 ```
 
 There is no automated test script wired into `package.json` yet — tests live under `src/test/` and are run via `@vscode/test-electron` (`src/test/runTest.ts`).
@@ -49,5 +49,5 @@ There is no automated test script wired into `package.json` yet — tests live u
 
 ## Before committing
 
-- Run `npm run compile` and `npm run lint`.
+- Run `bun run compile` and `bun run lint`.
 - Bump `version` in `package.json` and add an entry to the "Release Notes" section of `README.md` for user-facing changes.

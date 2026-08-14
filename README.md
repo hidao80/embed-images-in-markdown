@@ -33,6 +33,13 @@ Contributions are welcome!
 
 ## Release Notes
 
+### 0.1.1
+
+Switched package manager from npm to bun.
+
+- Replaced `package-lock.json` with `bun.lock`.
+- No user-facing behavior change.
+
 ### 0.1.0
 
 Fixes drag-and-drop compatibility with VS Code 1.125.0 and later.
