@@ -13,3 +13,8 @@ test/**
 test-results/**
 docs/**
 *.md
+biome.json
+bun.lock
+readme.md
+.claude/**
+.github/**
