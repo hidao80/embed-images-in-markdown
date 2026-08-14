@@ -9,3 +9,7 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 graphify-out/**
+test/**
+test-results/**
+docs/**
+*.md
