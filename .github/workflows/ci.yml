@@ -32,3 +32,21 @@ jobs:
                   bun-version: latest
             - run: bun install
             - run: bun run lint
+
+    build:
+        needs: [audit, lint]
+        runs-on: ubuntu-slim
+        permissions:
+            contents: read
+        steps:
+            - uses: actions/checkout@v7
+            - uses: flatt-security/setup-takumi-guard-npm@v1
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+            - run: bun install
+            - run: bun run build
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: vsix
+                  path: "*.vsix"
