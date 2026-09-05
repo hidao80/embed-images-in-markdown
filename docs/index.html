@@ -53,22 +53,33 @@
 
   <style>
 :root{ --pico-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;} .hero{ text-align: center; padding: 4rem 1rem 2rem;} .hero img.icon{ width: 96px; height: 96px; border-radius: 20%; margin-bottom: 1rem;} .hero h1{ margin-bottom: 0.5rem;} .section-title{ text-align: center;} .hero .tagline{ font-size: 1.25rem; color: var(--pico-muted-color); max-width: 640px; margin: 0 auto 2rem;} .cta-group{ display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;} .demo-wrap{ text-align: center; margin: 2rem 0;} .demo-wrap img{ max-width: 100%; border-radius: var(--pico-border-radius); box-shadow: 0 8px 30px rgba(0,0,0,0.25);} .feature-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 2rem 0;} .feature-grid article{ text-align: center;} .feature-grid .emoji{ font-size: 2.5rem; display: block; margin-bottom: 0.5rem;} .steps{ counter-reset: step; list-style: none; padding: 0;} .steps li{ counter-increment: step; position: relative; padding: 0.75rem 0 0.75rem 3rem; border-bottom: 1px solid var(--pico-muted-border-color);} .steps li:last-child{ border-bottom: none;} .steps li::before{ content: counter(step); position: absolute; left: 0; top: 0.6rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--pico-primary); color: var(--pico-primary-inverse); display: flex; align-items: center; justify-content: center; font-weight: bold;} footer.container{ text-align: center; padding: 2rem 1rem; color: var(--pico-muted-color);} mark{ background: var(--pico-primary); color: var(--pico-primary-inverse); padding: 0.1rem 0.4rem; border-radius: 0.3rem;}
+.site-header{ display: flex; justify-content: flex-end; align-items: center; padding: 1rem 1rem 0;} .site-header select{ width: auto; margin-bottom: 0;}
   </style>
 </head>
 <body>
+  <header class="container site-header">
+    <select id="lang-select" aria-label="Language">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+      <option value="es">Español</option>
+      <option value="ru">Русский</option>
+    </select>
+  </header>
+
   <main class="container">
     <section class="hero">
       <img class="icon" src="./icon256.png" alt="Embed Images in Markdown icon">
-      <h1>Embed Images in Markdown</h1>
-      <p class="tagline">
+      <h1 data-i18n="hero.title">Embed Images in Markdown</h1>
+      <p class="tagline" data-i18n="hero.tagline">
         Just <mark>drag and drop</mark> an image into your Markdown.<br>
         No more scattered image files — everything lives in a single <code>.md</code> file.
       </p>
       <div class="cta-group">
-        <a href="https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown" role="button">
+        <a href="https://marketplace.visualstudio.com/items?itemName=hidao80.embed-images-in-markdown" role="button" data-i18n="hero.ctaMarketplace">
           Get it on VS Code Marketplace
         </a>
-        <a href="https://github.com/hidao80/embed-images-in-markdown" role="button" class="secondary outline">
+        <a href="https://github.com/hidao80/embed-images-in-markdown" role="button" class="secondary outline" data-i18n="hero.ctaGithub">
           View on GitHub
         </a>
       </div>
@@ -79,61 +90,231 @@
     </section>
 
     <section>
-      <h2 class="section-title">Features</h2>
+      <h2 class="section-title" data-i18n="features.title">Features</h2>
       <div class="feature-grid">
         <article>
           <span class="emoji">🖱️</span>
-          <h3>Just drag and drop</h3>
-          <p>Hold <kbd>Shift</kbd> and drop an image onto the editor — that's it.</p>
+          <h3 data-i18n="features.dragdrop.title">Just drag and drop</h3>
+          <p data-i18n="features.dragdrop.body">Hold <kbd>Shift</kbd> and drop an image onto the editor — that's it.</p>
         </article>
         <article>
           <span class="emoji">📦</span>
-          <h3>Single-file, self-contained</h3>
-          <p>Images are converted to DataURLs and appended to the end of the file, preventing image files from scattering around your project.</p>
+          <h3 data-i18n="features.selfcontained.title">Single-file, self-contained</h3>
+          <p data-i18n="features.selfcontained.body">Images are converted to DataURLs and appended to the end of the file, preventing image files from scattering around your project.</p>
         </article>
         <article>
           <span class="emoji">🖼️</span>
-          <h3>Common formats supported</h3>
-          <p>Works with <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (uppercase extensions too).</p>
+          <h3 data-i18n="features.formats.title">Common formats supported</h3>
+          <p data-i18n="features.formats.body">Works with <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (uppercase extensions too).</p>
         </article>
         <article>
           <span class="emoji">🗂️</span>
-          <h3>Explorer drag & drop too</h3>
-          <p>Also works when dragging from the VS Code Explorer view, and supports pasting into an inactive editor pane.</p>
+          <h3 data-i18n="features.explorer.title">Explorer drag &amp; drop too</h3>
+          <p data-i18n="features.explorer.body">Also works when dragging from the VS Code Explorer view, and supports pasting into an inactive editor pane.</p>
         </article>
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">How it works</h2>
+      <h2 class="section-title" data-i18n="howitworks.title">How it works</h2>
       <ol class="steps">
-        <li>Open a Markdown file.</li>
-        <li>Hold <kbd>Shift</kbd> and drag an image file onto the editor.</li>
-        <li>A reference link is inserted at the drop position, and the image body (DataURL) is appended to the end of the file.</li>
+        <li data-i18n="howitworks.step1">Open a Markdown file.</li>
+        <li data-i18n="howitworks.step2">Hold <kbd>Shift</kbd> and drag an image file onto the editor.</li>
+        <li data-i18n="howitworks.step3">A reference link is inserted at the drop position, and the image body (DataURL) is appended to the end of the file.</li>
       </ol>
     </section>
 
     <section>
-      <h2 class="section-title">Before you start</h2>
+      <h2 class="section-title" data-i18n="beforeYouStart.title">Before you start</h2>
       <article>
-        <header><strong>Requirements</strong></header>
+        <header><strong data-i18n="beforeYouStart.requirements.title">Requirements</strong></header>
         <ul>
-          <li>Requires VS Code 1.125.0 or higher.</li>
-          <li>Verified working on Windows. macOS and Linux are supported by design but have not been independently verified — feedback welcome.</li>
+          <li data-i18n="beforeYouStart.requirements.item1">Requires VS Code 1.125.0 or higher.</li>
+          <li data-i18n="beforeYouStart.requirements.item2">Verified working on Windows. macOS and Linux are supported by design but have not been independently verified — feedback welcome.</li>
         </ul>
       </article>
       <article>
-        <header><strong>Known limitations</strong></header>
+        <header><strong data-i18n="beforeYouStart.limitations.title">Known limitations</strong></header>
         <ul>
-          <li>Since VS Code 1.125.0, <code>markdown.editor.drop.enabled</code> is a string setting (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) instead of a boolean. This setting only controls VS Code's own built-in Markdown link insertion and should not affect this extension, but if the built-in behavior interferes, set it to <code>"never"</code>.</li>
-          <li>If you drag and drop multiple files at the same time, only one will be pasted.</li>
+          <li data-i18n="beforeYouStart.limitations.item1">Since VS Code 1.125.0, <code>markdown.editor.drop.enabled</code> is a string setting (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) instead of a boolean. This setting only controls VS Code's own built-in Markdown link insertion and should not affect this extension, but if the built-in behavior interferes, set it to <code>"never"</code>.</li>
+          <li data-i18n="beforeYouStart.limitations.item2">If you drag and drop multiple files at the same time, only one will be pasted.</li>
         </ul>
       </article>
     </section>
   </main>
 
   <footer class="container">
-    <p>MIT License &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a></p>
+    <p data-i18n="footer.text">MIT License &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a></p>
   </footer>
+
+  <script>
+  const translations = {
+    en: {
+      "hero.title": "Embed Images in Markdown",
+      "hero.tagline": 'Just <mark>drag and drop</mark> an image into your Markdown.<br>No more scattered image files — everything lives in a single <code>.md</code> file.',
+      "hero.ctaMarketplace": "Get it on VS Code Marketplace",
+      "hero.ctaGithub": "View on GitHub",
+      "features.title": "Features",
+      "features.dragdrop.title": "Just drag and drop",
+      "features.dragdrop.body": "Hold <kbd>Shift</kbd> and drop an image onto the editor — that's it.",
+      "features.selfcontained.title": "Single-file, self-contained",
+      "features.selfcontained.body": "Images are converted to DataURLs and appended to the end of the file, preventing image files from scattering around your project.",
+      "features.formats.title": "Common formats supported",
+      "features.formats.body": "Works with <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (uppercase extensions too).",
+      "features.explorer.title": "Explorer drag &amp; drop too",
+      "features.explorer.body": "Also works when dragging from the VS Code Explorer view, and supports pasting into an inactive editor pane.",
+      "howitworks.title": "How it works",
+      "howitworks.step1": "Open a Markdown file.",
+      "howitworks.step2": "Hold <kbd>Shift</kbd> and drag an image file onto the editor.",
+      "howitworks.step3": "A reference link is inserted at the drop position, and the image body (DataURL) is appended to the end of the file.",
+      "beforeYouStart.title": "Before you start",
+      "beforeYouStart.requirements.title": "Requirements",
+      "beforeYouStart.requirements.item1": "Requires VS Code 1.125.0 or higher.",
+      "beforeYouStart.requirements.item2": "Verified working on Windows. macOS and Linux are supported by design but have not been independently verified — feedback welcome.",
+      "beforeYouStart.limitations.title": "Known limitations",
+      "beforeYouStart.limitations.item1": 'Since VS Code 1.125.0, <code>markdown.editor.drop.enabled</code> is a string setting (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) instead of a boolean. This setting only controls VS Code\'s own built-in Markdown link insertion and should not affect this extension, but if the built-in behavior interferes, set it to <code>"never"</code>.',
+      "beforeYouStart.limitations.item2": "If you drag and drop multiple files at the same time, only one will be pasted.",
+      "footer.text": 'MIT License &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a>'
+    },
+    ja: {
+      "hero.title": "Embed Images in Markdown",
+      "hero.tagline": '画像を<mark>ドラッグ&ドロップ</mark>するだけでMarkdownに埋め込めます。<br>画像ファイルが散らばることなく、すべてが1つの<code>.md</code>ファイルに収まります。',
+      "hero.ctaMarketplace": "VS Code Marketplaceで入手",
+      "hero.ctaGithub": "GitHubで見る",
+      "features.title": "機能",
+      "features.dragdrop.title": "ドラッグ&ドロップだけ",
+      "features.dragdrop.body": "<kbd>Shift</kbd>を押しながら画像をエディタにドロップするだけです。",
+      "features.selfcontained.title": "単一ファイルで完結",
+      "features.selfcontained.body": "画像はDataURLに変換されてファイルの末尾に追加されるため、画像ファイルがプロジェクト内に散らばりません。",
+      "features.formats.title": "主要な形式に対応",
+      "features.formats.body": "<code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code>（大文字の拡張子も可）に対応しています。",
+      "features.explorer.title": "エクスプローラーからのドロップにも対応",
+      "features.explorer.body": "VS Codeのエクスプローラービューからのドラッグにも対応し、非アクティブなエディタペインへの貼り付けもサポートしています。",
+      "howitworks.title": "使い方",
+      "howitworks.step1": "Markdownファイルを開きます。",
+      "howitworks.step2": "<kbd>Shift</kbd>を押しながら画像ファイルをエディタにドラッグします。",
+      "howitworks.step3": "ドロップした位置に参照リンクが挿入され、画像本体（DataURL）がファイルの末尾に追加されます。",
+      "beforeYouStart.title": "はじめる前に",
+      "beforeYouStart.requirements.title": "必要要件",
+      "beforeYouStart.requirements.item1": "VS Code 1.125.0以上が必要です。",
+      "beforeYouStart.requirements.item2": "Windowsで動作確認済みです。macOSとLinuxも設計上は対応していますが、個別の動作確認はまだ行われていません。フィードバックを歓迎します。",
+      "beforeYouStart.limitations.title": "既知の制限事項",
+      "beforeYouStart.limitations.item1": 'VS Code 1.125.0以降、<code>markdown.editor.drop.enabled</code>は真偽値ではなく文字列設定（<code>"always"</code>、<code>"smart"</code>、<code>"never"</code>）になりました。この設定はVS Code自体の組み込みMarkdownリンク挿入機能のみを制御するもので、この拡張機能には影響しないはずですが、組み込みの動作が干渉する場合は<code>"never"</code>に設定してください。',
+      "beforeYouStart.limitations.item2": "複数のファイルを同時にドラッグ&ドロップした場合、貼り付けられるのは1つだけです。",
+      "footer.text": 'MITライセンス &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a>'
+    },
+    zh: {
+      "hero.title": "Embed Images in Markdown",
+      "hero.tagline": '只需将图片<mark>拖放</mark>到 Markdown 中即可嵌入。<br>不再有散落的图片文件——一切都保存在一个 <code>.md</code> 文件中。',
+      "hero.ctaMarketplace": "在 VS Code Marketplace 获取",
+      "hero.ctaGithub": "在 GitHub 上查看",
+      "features.title": "功能特性",
+      "features.dragdrop.title": "只需拖放",
+      "features.dragdrop.body": "按住 <kbd>Shift</kbd> 并将图片拖放到编辑器中即可。",
+      "features.selfcontained.title": "单文件、自包含",
+      "features.selfcontained.body": "图片会被转换为 DataURL 并附加到文件末尾，防止图片文件散落在项目各处。",
+      "features.formats.title": "支持常见格式",
+      "features.formats.body": "支持 <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code>（大写扩展名也可）。",
+      "features.explorer.title": "也支持从资源管理器拖放",
+      "features.explorer.body": "同样支持从 VS Code 资源管理器视图拖动，并支持粘贴到非活动的编辑器窗格。",
+      "howitworks.title": "工作原理",
+      "howitworks.step1": "打开一个 Markdown 文件。",
+      "howitworks.step2": "按住 <kbd>Shift</kbd> 并将图片文件拖到编辑器上。",
+      "howitworks.step3": "系统会在放置位置插入引用链接，并将图片主体（DataURL）附加到文件末尾。",
+      "beforeYouStart.title": "开始之前",
+      "beforeYouStart.requirements.title": "系统要求",
+      "beforeYouStart.requirements.item1": "需要 VS Code 1.125.0 或更高版本。",
+      "beforeYouStart.requirements.item2": "已在 Windows 上验证可用。macOS 和 Linux 在设计上受支持，但尚未经过独立验证——欢迎反馈。",
+      "beforeYouStart.limitations.title": "已知限制",
+      "beforeYouStart.limitations.item1": '自 VS Code 1.125.0 起，<code>markdown.editor.drop.enabled</code> 变为字符串设置（<code>"always"</code>、<code>"smart"</code>、<code>"never"</code>），而不再是布尔值。此设置仅控制 VS Code 自身内置的 Markdown 链接插入功能，不应影响本扩展，但如果内置行为产生干扰，请将其设置为 <code>"never"</code>。',
+      "beforeYouStart.limitations.item2": "如果同时拖放多个文件，只会粘贴其中一个。",
+      "footer.text": 'MIT 许可证 &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a>'
+    },
+    es: {
+      "hero.title": "Embed Images in Markdown",
+      "hero.tagline": 'Simplemente <mark>arrastra y suelta</mark> una imagen en tu Markdown.<br>Se acabaron los archivos de imagen dispersos: todo vive en un único archivo <code>.md</code>.',
+      "hero.ctaMarketplace": "Consíguelo en VS Code Marketplace",
+      "hero.ctaGithub": "Ver en GitHub",
+      "features.title": "Características",
+      "features.dragdrop.title": "Solo arrastrar y soltar",
+      "features.dragdrop.body": "Mantén pulsado <kbd>Shift</kbd> y suelta una imagen en el editor — eso es todo.",
+      "features.selfcontained.title": "Archivo único y autocontenido",
+      "features.selfcontained.body": "Las imágenes se convierten en DataURLs y se añaden al final del archivo, evitando que los archivos de imagen se dispersen por tu proyecto.",
+      "features.formats.title": "Formatos comunes compatibles",
+      "features.formats.body": "Funciona con <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (también extensiones en mayúsculas).",
+      "features.explorer.title": "También desde el Explorador",
+      "features.explorer.body": "También funciona al arrastrar desde la vista del Explorador de VS Code, y admite pegar en un panel de editor inactivo.",
+      "howitworks.title": "Cómo funciona",
+      "howitworks.step1": "Abre un archivo Markdown.",
+      "howitworks.step2": "Mantén pulsado <kbd>Shift</kbd> y arrastra un archivo de imagen al editor.",
+      "howitworks.step3": "Se inserta un enlace de referencia en la posición donde se soltó, y el cuerpo de la imagen (DataURL) se añade al final del archivo.",
+      "beforeYouStart.title": "Antes de empezar",
+      "beforeYouStart.requirements.title": "Requisitos",
+      "beforeYouStart.requirements.item1": "Requiere VS Code 1.125.0 o superior.",
+      "beforeYouStart.requirements.item2": "Verificado en Windows. macOS y Linux son compatibles por diseño, pero no se han verificado de forma independiente — se agradecen comentarios.",
+      "beforeYouStart.limitations.title": "Limitaciones conocidas",
+      "beforeYouStart.limitations.item1": 'Desde VS Code 1.125.0, <code>markdown.editor.drop.enabled</code> es una configuración de tipo cadena (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) en lugar de un booleano. Esta configuración solo controla la inserción de enlaces Markdown integrada en VS Code y no debería afectar a esta extensión, pero si el comportamiento integrado interfiere, configúrala como <code>"never"</code>.',
+      "beforeYouStart.limitations.item2": "Si arrastras y sueltas varios archivos al mismo tiempo, solo se pegará uno.",
+      "footer.text": 'Licencia MIT &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a>'
+    },
+    ru: {
+      "hero.title": "Embed Images in Markdown",
+      "hero.tagline": 'Просто <mark>перетащите</mark> изображение в свой Markdown-документ.<br>Больше никаких разрозненных файлов изображений — всё хранится в одном файле <code>.md</code>.',
+      "hero.ctaMarketplace": "Получить в VS Code Marketplace",
+      "hero.ctaGithub": "Смотреть на GitHub",
+      "features.title": "Возможности",
+      "features.dragdrop.title": "Просто перетаскивание",
+      "features.dragdrop.body": "Удерживайте <kbd>Shift</kbd> и перетащите изображение в редактор — вот и всё.",
+      "features.selfcontained.title": "Один самодостаточный файл",
+      "features.selfcontained.body": "Изображения преобразуются в DataURL и добавляются в конец файла, что предотвращает разбросанность файлов изображений по проекту.",
+      "features.formats.title": "Поддержка популярных форматов",
+      "features.formats.body": "Работает с <code>png</code> / <code>jpeg</code> / <code>jpg</code> / <code>gif</code> / <code>webp</code> (также с расширениями в верхнем регистре).",
+      "features.explorer.title": "Также работает из проводника",
+      "features.explorer.body": "Также работает при перетаскивании из окна проводника VS Code и поддерживает вставку в неактивную панель редактора.",
+      "howitworks.title": "Как это работает",
+      "howitworks.step1": "Откройте файл Markdown.",
+      "howitworks.step2": "Удерживая <kbd>Shift</kbd>, перетащите файл изображения в редактор.",
+      "howitworks.step3": "В месте вставки добавляется ссылка на изображение, а само изображение (DataURL) добавляется в конец файла.",
+      "beforeYouStart.title": "Перед началом работы",
+      "beforeYouStart.requirements.title": "Требования",
+      "beforeYouStart.requirements.item1": "Требуется VS Code версии 1.125.0 или выше.",
+      "beforeYouStart.requirements.item2": "Проверено на Windows. macOS и Linux поддерживаются по замыслу, но независимая проверка не проводилась — будем рады отзывам.",
+      "beforeYouStart.limitations.title": "Известные ограничения",
+      "beforeYouStart.limitations.item1": 'Начиная с VS Code 1.125.0, параметр <code>markdown.editor.drop.enabled</code> стал строковым (<code>"always"</code>, <code>"smart"</code>, <code>"never"</code>) вместо логического. Этот параметр управляет только встроенной вставкой Markdown-ссылок в самом VS Code и не должен влиять на это расширение, но если встроенное поведение мешает, установите значение <code>"never"</code>.',
+      "beforeYouStart.limitations.item2": "Если перетащить несколько файлов одновременно, будет вставлен только один.",
+      "footer.text": 'Лицензия MIT &middot; <a href="https://github.com/hidao80/embed-images-in-markdown">hidao80/embed-images-in-markdown</a>'
+    }
+  };
+
+  function applyLanguage(lang) {
+    const dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+    document.documentElement.lang = lang;
+    try {
+      localStorage.setItem('lang', lang);
+    } catch (e) {
+      /* ignore storage errors (private mode, disabled storage) */
+    }
+  }
+
+  const select = document.getElementById('lang-select');
+  let initialLang = 'en';
+  try {
+    initialLang = localStorage.getItem('lang') || (navigator.language || 'en').slice(0, 2);
+  } catch (e) {
+    initialLang = (navigator.language || 'en').slice(0, 2);
+  }
+  if (!translations[initialLang]) {
+    initialLang = 'en';
+  }
+  select.value = initialLang;
+  applyLanguage(initialLang);
+  select.addEventListener('change', () => applyLanguage(select.value));
+  </script>
 </body>
 </html>
