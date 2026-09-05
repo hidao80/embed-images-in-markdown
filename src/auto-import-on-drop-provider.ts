@@ -35,11 +35,11 @@ export class  EmbeddingImagesOnDropProvider
             const dropFilePath = _document.uri.fsPath;
 
             if (dragFilePath.toLowerCase() === dropFilePath.toLowerCase()) {
-                return notify(NotifyType.sameFilePath);
+                return notify(NotifyType.SameFilePath);
             }
 
             if (!supportedImages.includes(getFileExt(dragFilePath.toLowerCase()))) {
-                return notify(NotifyType.notSupported);
+                return notify(NotifyType.NotSupported);
             }
 
             // Use Unix time as the ID of the reference link.

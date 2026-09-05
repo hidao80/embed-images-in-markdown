@@ -13,13 +13,13 @@ export function notify(type: NotifyType): vscode.DocumentDropEdit {
         .get<boolean>("disableAllDropNotifications");
 
     switch (type) {
-        case NotifyType.sameFilePath: {
+        case NotifyType.SameFilePath: {
             // Emit same file path, window notification (warning)
             disableAllDropNotifications ||
                 vscode.window.showWarningMessage(`Same file path.`);
             return { insertText: "" };
         }
-        case NotifyType.notSupported: {
+        case NotifyType.NotSupported: {
             // Emit not supported, window notification (warning)
             disableAllDropNotifications ||
                 vscode.window.showWarningMessage(`Not supported.`);
