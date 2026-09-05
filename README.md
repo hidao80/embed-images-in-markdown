@@ -33,6 +33,14 @@ Contributions are welcome!
 
 ## Release Notes
 
+### 0.1.2
+
+Fixed the packaged extension unnecessarily bundling `node_modules`.
+
+- Moved `@vscode/vsce` from `dependencies` to `devDependencies` (it's a packaging tool, not a runtime dependency).
+- Added `node_modules/**` to `.vscodeignore`.
+- No user-facing behavior change; the packaged `.vsix` is now smaller.
+
 ### 0.1.1
 
 Switched package manager from npm to bun.
